@@ -16,7 +16,7 @@ char    *ft_strdup(char *src)
     i = 0;
     while (src[i])
         i++;
-    dest = (char *)malloc(sizeof(char) * (i + 1));
+    dest = malloc(i + 1);
     i = 0;
     while (src[i])
     {
@@ -58,14 +58,15 @@ char    *get_next_line(int fd)
 }
 
 
-int main() {
-    int fd = open("test.txt", O_RDONLY);
-    char *line;
+// int main()
+// {
+//     int fd = open("test.txt", O_RDONLY);
+//     char *line;
 
-    while ((line = get_next_line(fd)) != NULL) {
-        printf("%s", line);
-        free(line); 
-    }
-    close(fd);
-    return 0;
-}
+//     while ((line = get_next_line(fd)) != NULL) {
+//         printf("%s", line);
+//         free(line); 
+//     }
+//     close(fd);
+//     return 0;
+// }
